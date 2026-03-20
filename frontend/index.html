@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Simple Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════ HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">TaskFlow</span>
+      </div>
+      <div class="header-stats">
+        <span id="stat-total">0 tasks</span>
+        <span class="divider">·</span>
+        <span id="stat-done">0 done</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════ MAIN -->
+  <main class="main-layout">
+
+    <!-- ── Add Task Panel ──────────────────────── -->
+    <aside class="add-panel">
+      <h2 class="panel-title">New Task</h2>
+
+      <div class="form-group">
+        <label for="task-title">Title <span class="req">*</span></label>
+        <input
+          id="task-title"
+          type="text"
+          placeholder="What needs to be done?"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="task-desc">Description</label>
+        <textarea
+          id="task-desc"
+          placeholder="Add details (optional)…"
+          rows="4"
+        ></textarea>
+      </div>
+
+      <!-- Error message box -->
+      <div id="error-msg" class="error-box hidden">
+        <span class="error-icon">!</span>
+        <span id="error-text"></span>
+      </div>
+
+      <button id="add-btn" class="btn-add" onclick="addTask()">
+        <span class="btn-icon">+</span> Add Task
+      </button>
+    </aside>
+
+    <!-- ── Task List ───────────────────────────── -->
+    <section class="task-section">
+      <div class="section-header">
+        <h2 class="panel-title">All Tasks</h2>
+        <div class="filter-tabs">
+          <button class="tab active" data-filter="all"    onclick="setFilter('all')">All</button>
+          <button class="tab"        data-filter="pending" onclick="setFilter('pending')">Pending</button>
+          <button class="tab"        data-filter="done"   onclick="setFilter('done')">Done</button>
+        </div>
+      </div>
+
+      <!-- Loading spinner -->
+      <div id="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading tasks…</p>
+      </div>
+
+      <!-- Empty state -->
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">☐</div>
+        <p>No tasks yet. Add one to get started!</p>
+      </div>
+
+      <!-- Task cards container -->
+      <div id="task-list" class="task-list"></div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════ TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
