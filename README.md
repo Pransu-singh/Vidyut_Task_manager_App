@@ -4,13 +4,7 @@
 
 ---
 
-## 📸 Screenshots
-
-> _Run the project and add your own screenshots here._
-
-| Add a Task | Task List | Completed Tasks |
-|---|---|---|
-| _screenshot here_ | _screenshot here_ | _screenshot here_ |
+ <img width="1919" height="807" alt="image" src="https://github.com/user-attachments/assets/3977494f-623e-485a-9565-814ebc459745" />
 
 ---
 
