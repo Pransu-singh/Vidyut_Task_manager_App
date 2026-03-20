@@ -2,7 +2,7 @@
 //  Configuration
 // ─────────────────────────────────────────
 
-const API_BASE = import.meta.env.VITE_API_URL;  // Flask backend URL
+const API_BASE = "https://vidyut-task-manager-app.onrender.com";  // Flask backend URL
 
 // ─────────────────────────────────────────
 //  State
