@@ -26,6 +26,22 @@ def find_task(task_id):
 # ─────────────────────────────────────────
 #  Routes
 # ─────────────────────────────────────────
+# ─────────────────────────────────────────
+#  Routes
+# ─────────────────────────────────────────
+
+@app.route("/")
+def home():
+    return {
+        "message": "Task Manager API is running 🚀",
+        "usage": {
+            "GET all tasks": "/tasks",
+            "POST create task": "/tasks",
+            "PUT update task": "/tasks/<id>",
+            "DELETE task": "/tasks/<id>"
+        }
+    }
+
 
 @app.route("/tasks", methods=["GET"])
 def get_tasks():
